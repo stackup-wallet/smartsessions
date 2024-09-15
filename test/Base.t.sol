@@ -19,7 +19,7 @@ import "contracts/DataTypes.sol";
 import { EncodeLib } from "contracts/lib/EncodeLib.sol";
 import { YesSigner } from "./mock/YesSigner.sol";
 import { MockTarget } from "./mock/MockTarget.sol";
-// import { YesPolicy } from "./mock/YesPolicy.sol";
+import { YesPolicy } from "contracts/external/policies/SudoPolicy.sol";
 import { MockRegistry } from "./mock/MockRegistry.sol";
 import { SimpleSigner } from "./mock/SimpleSigner.sol";
 import { SimpleGasPolicy } from "./mock/SimpleGasPolicy.sol";
@@ -32,8 +32,6 @@ import { UserOperationBuilder } from "test/mock/erc7679/UserOpBuilder.sol";
 import { ModeLib, ModeCode as ExecutionMode } from "erc7579/lib/ModeLib.sol";
 import { HashLib } from "contracts/lib/HashLib.sol";
 import { TestHashLib } from "test/utils/TestHashLib.sol";
-
-import { YesPolicy } from "contracts/external/policies/SudoPolicy.sol";
 
 import "forge-std/console2.sol";
 
