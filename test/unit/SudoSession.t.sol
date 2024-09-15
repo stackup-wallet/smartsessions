@@ -28,8 +28,8 @@ contract SudoSessionTest is BaseTest {
 
         ActionData[] memory actionDatas = new ActionData[](1);
         actionDatas[0] = ActionData({
-            actionTarget: address(1),
-            actionTargetSelector: bytes4(0x00000001),
+            actionTarget: FALLBACK_TARGET_FLAG,
+            actionTargetSelector: FALLBACK_TARGET_SELECTOR_FLAG,
             actionPolicies: policyDatas
         });
 
