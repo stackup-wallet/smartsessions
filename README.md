@@ -1,4 +1,4 @@
-> **This a minimal fork of the [erc7579/smartsessions repo](https://github.com/erc7579/smartsessions) used by Stackup's application layer. For the complete diff, [see here.](https://github.com/erc7579/smartsessions/compare/main...stackup-wallet:smartsessions:accessctl)**
+> **This a minimal fork of the [erc7579/smartsessions repo](https://github.com/erc7579/smartsessions) used by Stackup's application layer. For the complete diff, [see here](https://github.com/erc7579/smartsessions/compare/main...stackup-wallet:smartsessions:accessctl).**
 
 # SmartSession
 
