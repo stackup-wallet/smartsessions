@@ -164,6 +164,8 @@ uint256 constant ERC7579_MODULE_TYPE_POLICY = 7;
 // selector does not have a set action policy, then the fallback will be used if
 // enabled.
 ActionId constant FALLBACK_ACTIONID = ActionId.wrap(bytes32(uint256(1)));
+address constant FALLBACK_TARGET_FLAG = address(1);
+bytes4 constant FALLBACK_TARGET_SELECTOR_FLAG = 0x00000001;
 
 // A unique ValidationData value to retry a policy check with the FALLBACK_ACTIONID.
 ValidationData constant RETRY_WITH_FALLBACK = ValidationData.wrap(uint256(0x50FFBAAD));
