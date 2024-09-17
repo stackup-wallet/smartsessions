@@ -181,7 +181,8 @@ library PolicyLib {
                 userOp: userOp,
                 permissionId: permissionId,
                 callOnIPolicy: abi.encodeCall(
-                    IActionPolicy.checkAction, (permissionId.toConfigId(actionId), userOp.sender, target, value, callData)
+                    IActionPolicy.checkAction,
+                    (permissionId.toConfigId(FALLBACK_ACTIONID), userOp.sender, target, value, callData)
                 ),
                 minPolicies: minPolicies
             });
