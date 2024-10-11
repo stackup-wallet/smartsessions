@@ -210,7 +210,7 @@ library PolicyLib {
         ActionId actionId = target.toActionId(targetSig);
 
         // Check the relevant action policy
-        vd = $policies[actionId].tryCheck({
+        vd = $policies[actionId].check({
             userOp: userOp,
             permissionId: permissionId,
             callOnIPolicy: abi.encodeCall(
