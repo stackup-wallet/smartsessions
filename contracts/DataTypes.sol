@@ -159,36 +159,6 @@ uint256 constant ERC7579_MODULE_TYPE_HOOK = 4;
 // the module type is tbd, but for now we use 7, until a new module type via ERC7579 extension process is defined
 uint256 constant ERC7579_MODULE_TYPE_POLICY = 7;
 
-// ActionId for a fallback action policy. This id will be used if both action
-// target and selector are set to 1. During validation if the current target and
-// selector does not have a set action policy, then the fallback will be used if
-// enabled.
-ActionId constant FALLBACK_ACTIONID = ActionId.wrap(bytes32(uint256(1)));
-address constant FALLBACK_TARGET_FLAG = address(1);
-bytes4 constant FALLBACK_TARGET_SELECTOR_FLAG = 0x00000001;
-
-// If call data is null then default to using this value for the selector during
-// actionId generation. Note that users should verify the target does not have any
-// functions which could colide with this selector. If so, the session could send
-// NULL data to the target and call these functions with one policy. To prevent
-// this the policy should also have the appropriate call data checks in place.
-// Known collsions: https://www.4byte.directory/signatures/?bytes4_signature=0x00000002
-bytes4 constant NULL_DATA_TARGET_SELECTOR_FLAG = 0x00000002;
-
-// A unique ValidationData value to retry a policy check with the FALLBACK_ACTIONID.
-ValidationData constant RETRY_WITH_FALLBACK = ValidationData.wrap(uint256(0x50FFBAAD));
-
-using { validationDataEq as == } for ValidationData global;
-using { validationDataNeq as != } for ValidationData global;
-
-function validationDataEq(ValidationData uid1, ValidationData uid2) pure returns (bool) {
-    return ValidationData.unwrap(uid1) == ValidationData.unwrap(uid2);
-}
-
-function validationDataNeq(ValidationData uid1, ValidationData uid2) pure returns (bool) {
-    return ValidationData.unwrap(uid1) != ValidationData.unwrap(uid2);
-}
-
 using { permissionIdEq as == } for PermissionId global;
 using { permissionIdNeq as != } for PermissionId global;
 
